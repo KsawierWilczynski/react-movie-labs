@@ -24,6 +24,14 @@ if (type === "name") setNameFilter(value);
 else setGenreFilter(value);
 };
 
+const addToFavorites = (movieId) => {
+const updatedMovies = movies.map((m) =>
+m.id === movieId ? { ...m, favorite: true } : m
+);
+setMovies(updatedMovies);
+};
+
+
 
 useEffect(() => {
 fetch(
@@ -49,7 +57,7 @@ return (
             <FilterCard onUserInput={handleChange} titleFilter={nameFilter} genreFilter={genreFilter} />
 
         </Grid>
-        <MovieList movies={displayedMovies} />
+        <MovieList movies={displayedMovies} selectFavorite={addToFavorites} />
 
     </Grid>
 </Grid>
