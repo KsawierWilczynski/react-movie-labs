@@ -10,6 +10,7 @@ const AddToPlaylistIcon = ({ movie }) => {
   const handleAddToPlaylist = (e) => {
     e.preventDefault();
     context.addToPlaylist(movie);
+    console.log(context.playlist);
   };
   
   return (
