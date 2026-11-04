@@ -4,11 +4,13 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
+import PersonIcon from "@mui/icons-material/Person"
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import MovieCredits from "../movieCredits"
 
 
 const root = {
@@ -23,6 +25,7 @@ const chip = { margin: 0.5 };
 
 const MovieDetails = ({ movie }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [creditsOpen, setCreditsOpen] = useState(false);
 
   return (
     <>
@@ -82,6 +85,22 @@ const MovieDetails = ({ movie }) => {
         <NavigationIcon />
         Reviews
       </Fab>
+      <Fab
+        color="secondary"
+        variant="extended"
+        onClick={() =>setCreditsOpen(true)}
+        sx={{
+          position: 'fixed',
+          bottom: '1em',
+          right: '10em'
+        }}
+      >
+        <PersonIcon />
+        Credits
+      </Fab>
+      <Drawer anchor="top" open={creditsOpen} onClose={() => setCreditsOpen(false)}>
+        <MovieCredits movie={movie} />
+      </Drawer>
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
