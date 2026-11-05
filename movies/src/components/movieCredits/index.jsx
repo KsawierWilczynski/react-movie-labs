@@ -38,7 +38,9 @@ export default function MovieCredits({ movie }) {
         <TableBody>
           {credits.map((r) => (
             <TableRow id={r.id}>
+              <a href={`/people/${r.id}`}>
                 <TableCell>{r.name}</TableCell>
+              </a>
                 <TableCell>{r.character}</TableCell>
             </TableRow>
           ))}
