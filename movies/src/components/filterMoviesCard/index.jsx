@@ -13,6 +13,8 @@ import {useState, useEffect} from "react";
 import { getGenres } from "../../api/tmdb-api";
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../spinner';
+import Slider from "@mui/material/Slider";
+import Rating from "@mui/material/Rating";
 
 
 
@@ -83,6 +85,13 @@ return (
                 );
                 })}
             </Select>
+        </FormControl>
+        <FormControl sx={{...formControl}}>
+            <InputLabel id="rating-label">Minimum Rating</InputLabel>
+            <Rating labelId="rating-label" id="rating-select" defaultValue={0} value={props.ratingFilter}
+                onChange={(e, newValue) => {
+                    handleChange(e, "rating", newValue);
+                }} />
         </FormControl>
     </CardContent>
     <CardMedia sx={{ height: 300 }} image={img} title="Filter" />
