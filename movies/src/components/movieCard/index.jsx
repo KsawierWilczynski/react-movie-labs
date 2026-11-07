@@ -39,7 +39,7 @@ return (
     ) : null
     }
     title={
-    <Typography variant="h5" component="p">
+    <Typography variant="h5" component="p" style={{ textAlign: "center" }}>
       {movie.title}{" "}
     </Typography>
     }
@@ -55,7 +55,7 @@ return (
             {movie.release_date}
           </Typography>
         </Grid>
-        <Grid size={{xs: 6}}>
+        <Grid size={{xs: 6}} sx={{textAlign: "right"}}>
           <Typography variant="h6" component="p">
             <StarRateIcon fontSize="small" />
             {" "} {movie.vote_average}{" "}
