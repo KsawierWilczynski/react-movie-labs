@@ -15,6 +15,7 @@ import NowPlayingMoviesPage from "./pages/movieNowPlayingPage";
 import TrendingMoviesPage from "./pages/movieTrendingPage";
 import TopRatedMoviesPage from "./pages/movieTopRatedPage";
 import PlaylistMoviesPage from "./pages/playlistMoviesPage";
+import MovieRecommendationsPage from "./pages/movieRecommendationsPage";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./util";
 
@@ -41,6 +42,7 @@ const App = () => {
               <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
               <Route path="/reviews/:id" element={<MovieReviewPage />} />
               <Route path="/movies/:id" element={<MoviePage />} />
+              <Route path="/movies/:id/recommendations" element={<MovieRecommendationsPage />} />
               <Route path="/" element={<HomePage />} />
               <Route path="*" element={<Navigate to="/" />} />
               <Route path="/reviews/form" element={<AddMovieReviewPage />} />

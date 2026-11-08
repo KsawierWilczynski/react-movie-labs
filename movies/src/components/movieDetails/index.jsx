@@ -11,6 +11,7 @@ import { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
 import MovieCredits from "../movieCredits"
+import Button from "@mui/material/Button";
 
 
 const root = {
@@ -72,6 +73,13 @@ const MovieDetails = ({ movie }) => {
           </li>
         ))}
       </Paper>
+      <Paper component="ul" sx={{...root}}>
+        <li>
+          <Button variant="outlined" size="medium" color="primary" href={`/movies/${movie.id}/recommendations`}>
+            Other Recommended Movies
+          </Button>
+        </li>
+        </Paper>
            <Fab
         color="secondary"
         variant="extended"
